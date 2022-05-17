@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+# This file should not be push but only for the purpose of the project
+
+export FLASK_APP=app
+export FLASK_ENV=development
+export DATABASE_URL='postgresql://postgres:Pa553R@localhost:5432/capstone'
+flask db upgrade

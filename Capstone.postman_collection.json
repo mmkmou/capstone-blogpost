@@ -1,0 +1,1340 @@
+{
+	"info": {
+		"_postman_id": "636fa9ba-88c4-4bc3-8491-4ddb162f07f9",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Anonymous",
+			"item": [
+				{
+					"name": "Create Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Ceci est mon premier\",\n    \"message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detailed Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\n    \"post_id\": 1,\n    \"title\": \"to delete\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1/vote",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1",
+								"vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reader",
+			"item": [
+				{
+					"name": "Create Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Ceci est mon premier sans body\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detailed Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"body\": \"ceci est un test automatic\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\n    \"post_id\": 1,\n    \"title\": \"to delete\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains score as string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.score).to.be.an('number')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1/vote",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1",
+								"vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
+									"    pm.response.to.have.status(403);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5N2MyODA0ODcwMDY4Y2VhMTE4IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI3NTM4OTEsImV4cCI6MTY1Mjg0MDI5MSwiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50Iiwidm90ZTpjb21tZW50Il19.cXyDXNmdLrF8f3710W1FGod4NmFUFSmXIz2O9o2Brf6lsm30YGaC-nHLmgAu5jnklnuCIzTQBx-wgfnQ8AFl4eDxfKfQxuWaRj9wT3qz-HIn2HFzC73k6BLsmeTydcYLjynYVNZ2sEiipSID2d_M9dRwEVtKzoSpU0JnUVdZjwGJst8ZdIuJIiyhJ6P-IC2b_uG_VC6NfDt1NLHOk5rQ9yZDvEro3lmRpI2WR3QAJWV0biRqvCytAte-sYZ0pFprY-ghe1uZEBnkxSjb25TD_ULl8M01Qwr-1U8jvwuW2qbsr6NHNU9U8b_mtI2Ww7OA9hJtJHgsx3luHsGfSL5AuQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Editor",
+			"item": [
+				{
+					"name": "Create Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Ceci est mon second article\",\n    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detailed Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.posts).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Posts",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts updated id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.updated).to.be.an('number')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"updated posts\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\n    \"post_id\": 1,\n    \"title\": \"to delete\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post comments",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1/comments",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments object\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.comments).to.be.an('object')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vote comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains score as string\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.score).to.be.an('number')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1/vote",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1",
+								"vote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains comments deleted id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.deleted).to.be.an('number')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/comments/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"comments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains posts deleted id\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.deleted).to.be.an('number')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}{{base_url}}/posts/1",
+							"host": [
+								"{{host}}{{base_url}}"
+							],
+							"path": [
+								"posts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5ZmI1YmJmYWMwMDY3MTcwZTI3IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI3NTQxMzMsImV4cCI6MTY1Mjg0MDUzMywiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50IiwiY3JlYXRlOnBvc3QiLCJkZWxldGU6Y29tbWVudCIsImRlbGV0ZTpwb3N0IiwidXBkYXRlOmNvbW1lbnQiLCJ1cGRhdGU6cG9zdCIsInZvdGU6Y29tbWVudCJdfQ.ZiIqSNrSbRv53fdRgmqW7t1VISF2UA7o6vrE70r1S0d2E4qV43EotNViuR0tYTIxdkOJz3irSdeLUSm_swNK3QBi80VbAZucr22d3_59hYvTDWmTooHdm_rgu_uoF-9zclWQQjL0TSRRQ_V68AGuSEjgojh409KcvY5CQ5Wu6wlxCisl_j5EB9vXAXnZYwtjYFSqpMVORNMupKpRW-ORBh2plBLgTYjEh4FMwv_e_2lNEWo7veE05BfFweOTX8oCTin-9eYIdIYALTEbJtlZPrkFalYvMDSLKRGhIVN30ruNKQPxmHYpJ2z2EoU7It6c8tuohHVddPZlinRcIfQtXA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "base_url",
+			"value": "/api/v1",
+			"type": "string"
+		}
+	]
+}
