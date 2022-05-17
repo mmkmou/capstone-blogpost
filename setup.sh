@@ -12,5 +12,3 @@ export AUTH_AUDIENCE='capstone'
 export AUTH_SECRET='Vf5-yPsfkj7nGAukwVydX3r9QzIFaF0IPTMoro246QleLUZorO002byS4mZLrPcq'
 export AUTH_CLIENT_ID='R0FdN3l1B1EDkEJ5Z6BgvgZjGIOiXbCM'
 export REDIRECT_URL='https://eo6nlbgy2ozay8f.m.pipedream.net'
-
-# flask run

@@ -29,3 +29,4 @@ typing-extensions==4.2.0
 Werkzeug==0.15.6
 wrapt==1.11.1
 zipp==3.8.0
+Flask-Script==2.0.6
