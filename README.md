@@ -23,8 +23,40 @@ Depend on user profile, some permissions are apply to him:
 
 ## Installation & Configuration
 
-### Set up the Database
+### Installing Dependencies
 
+#### Python 3.7
+
+Follow instructions to install the latest version of python for your platform in the [python docs](https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python)
+
+#### Virtual Environment
+
+We recommend working within a virtual environment whenever using Python for projects. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in the [python docs](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/)
+
+
+#### Key Dependencies
+
+- [Flask](http://flask.pocoo.org/) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+
+- [SQLAlchemy](https://www.sqlalchemy.org/) and [Flask-SQLAlchemy](https://flask-sqlalchemy.palletsprojects.com/en/2.x/) are libraries to handle the lightweight sqlite database. Since we want you to focus on auth, we handle the heavy lift for you in `./src/database/models.py`. We recommend skimming this code first so you know how to interface with the Drink model.
+
+- [Flask-CORS](https://flask-cors.readthedocs.io/en/latest/#) is the extension we'll use to handle cross-origin requests from our frontend server.
+
+- [python-jose](https://github.com/mpdavis/python-jose) JavaScript Object Signing and Encryption for JWTs. Useful for encoding, decoding, and verifying JWTS.
+
+- [Flask-Migrate](https://flask-migrate.readthedocs.io/en/latest/) for creating and running schema migrations
+
+- [gunicorm](https://pypi.org/project/gunicorn/) Gunicorn 'Green Unicorn' is a Python WSGI HTTP Server for UNIX. It's a pre-fork worker model.
+
+### Set up the Database postgresql
+
+#### Install PostgreSQL 
+
+-  On windows : https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql/ 
+-  On Linux : https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql-linux/
+-  On MacOs : https://www.postgresqltutorial.com/postgresql-getting-started/install-postgresql-macos/ 
+
+#### Populate your base for test purpose
 With Postgres running, create a `capstone` database:
 
 ```bash
@@ -33,7 +65,7 @@ psql capstone < capstone.psql
 ```
 
 
-### Run the Server
+### Run the Server on local
 
 - Activate virtualEnv
 On the root of the project run :
@@ -105,6 +137,8 @@ createdb capstone
 psql capstone < capstone.psql
 ```
 
+####  Postman test 
+
 You can test all endpoint by used the postman. For That, 
  - Import the collection Capstone.postman_collection.json
  - Change Token on collectin variable for Reader and Editor
@@ -117,6 +151,17 @@ you need to adapt value if you want to run it again or just remove and recreate 
 
 >  To test the online application with postman just change on the collection variable the host value with this one : \
 https://capstone-blogpost.herokuapp.com 
+
+
+#### Unit test 
+
+## Deployment 
+
+The deployed application is available on Heroku and can be accessed at 
+
+```
+https://capstone-blogpost.herokuapp.com
+```
 
 
 ## API Documentation
