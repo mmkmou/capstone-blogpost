@@ -28,7 +28,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Ceci est mon premier\",\n    \"message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"raw": "{\n    \"title\": \"Lorem ipsum dolor sit ame\",\n    \"message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -227,13 +227,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}{{base_url}}/posts/1/comments",
+							"raw": "{{host}}{{base_url}}/posts/2/comments",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"posts",
-								"1",
+								"2",
 								"comments"
 							]
 						}
@@ -510,13 +510,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}{{base_url}}/posts/1",
+							"raw": "{{host}}{{base_url}}/posts/3",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"posts",
-								"1"
+								"3"
 							]
 						}
 					},
@@ -550,13 +550,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/posts/1",
+							"raw": "{{host}}{{base_url}}/posts/2",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"posts",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -671,13 +671,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/comments/1",
+							"raw": "{{host}}{{base_url}}/comments/5",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"comments",
-								"1"
+								"5"
 							]
 						}
 					},
@@ -815,7 +815,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5N2MyODA0ODcwMDY4Y2VhMTE4IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI3NTM4OTEsImV4cCI6MTY1Mjg0MDI5MSwiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50Iiwidm90ZTpjb21tZW50Il19.cXyDXNmdLrF8f3710W1FGod4NmFUFSmXIz2O9o2Brf6lsm30YGaC-nHLmgAu5jnklnuCIzTQBx-wgfnQ8AFl4eDxfKfQxuWaRj9wT3qz-HIn2HFzC73k6BLsmeTydcYLjynYVNZ2sEiipSID2d_M9dRwEVtKzoSpU0JnUVdZjwGJst8ZdIuJIiyhJ6P-IC2b_uG_VC6NfDt1NLHOk5rQ9yZDvEro3lmRpI2WR3QAJWV0biRqvCytAte-sYZ0pFprY-ghe1uZEBnkxSjb25TD_ULl8M01Qwr-1U8jvwuW2qbsr6NHNU9U8b_mtI2Ww7OA9hJtJHgsx3luHsGfSL5AuQ",
+						"value": "{{reader_token}}",
 						"type": "string"
 					}
 				]
@@ -869,7 +869,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Ceci est mon second article\",\n    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"raw": "{\n    \"title\": \"Lorem ipsum dolor sit amet 3\",\n    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1035,7 +1035,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\n    \"post_id\": 1,\n    \"title\": \"to delete\"\n}",
+							"raw": "{\n    \"message\": \"test Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit\",\n    \"post_id\": 1,\n    \"title\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1116,7 +1116,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...\",\n    \"title\": \"a updated comment\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1161,7 +1161,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1205,23 +1205,14 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"message\": \"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci\",\n    \"title\": \"Ceci est un update\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/comments/1",
+							"raw": "{{host}}{{base_url}}/comments/2",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"comments",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -1260,13 +1251,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/posts/1",
+							"raw": "{{host}}{{base_url}}/posts/2",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"posts",
-								"1"
+								"2"
 							]
 						}
 					},
@@ -1278,7 +1269,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5ZmI1YmJmYWMwMDY3MTcwZTI3IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI3NTQxMzMsImV4cCI6MTY1Mjg0MDUzMywiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50IiwiY3JlYXRlOnBvc3QiLCJkZWxldGU6Y29tbWVudCIsImRlbGV0ZTpwb3N0IiwidXBkYXRlOmNvbW1lbnQiLCJ1cGRhdGU6cG9zdCIsInZvdGU6Y29tbWVudCJdfQ.ZiIqSNrSbRv53fdRgmqW7t1VISF2UA7o6vrE70r1S0d2E4qV43EotNViuR0tYTIxdkOJz3irSdeLUSm_swNK3QBi80VbAZucr22d3_59hYvTDWmTooHdm_rgu_uoF-9zclWQQjL0TSRRQ_V68AGuSEjgojh409KcvY5CQ5Wu6wlxCisl_j5EB9vXAXnZYwtjYFSqpMVORNMupKpRW-ORBh2plBLgTYjEh4FMwv_e_2lNEWo7veE05BfFweOTX8oCTin-9eYIdIYALTEbJtlZPrkFalYvMDSLKRGhIVN30ruNKQPxmHYpJ2z2EoU7It6c8tuohHVddPZlinRcIfQtXA",
+						"value": "{{editor_token}}",
 						"type": "string"
 					}
 				]
@@ -1328,12 +1319,22 @@
 	"variable": [
 		{
 			"key": "host",
-			"value": "localhost:5000",
+			"value": "https://capstone-blogpost.herokuapp.com",
 			"type": "string"
 		},
 		{
 			"key": "base_url",
 			"value": "/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "reader_token",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5N2MyODA0ODcwMDY4Y2VhMTE4IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI4NDE1MzEsImV4cCI6MTY1MjkyNzkzMSwiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50Iiwidm90ZTpjb21tZW50Il19.TWNkzXJu7nugRT4c1huwu6X8VM7PN6rbxJTpSKPam_aspipXp2Jn5VsvHHIociTkWx0lR8HNVz1vc72MYbsrJDIt-bMFsh7ZpzaftzppGyJE6j3L7LP0zzlbmLPGCmhZM4xyeDzmpC4Ra_p1B82EvojNXetLLwtUhJtgt2JjDW-5fAoDZ7sh9ZtXw5VEFJbTHi0dOnHQ57eHMrk2fBZN_0IH2whDICf14wcR13mWWltritQErp5iGKW42_-rw-RkI4AhmYg-7vAiouAFkV4xa5Vo4luLd4IbABa4mX7tRlfh9edQ7l4ayNg1sPLHpzjo260xQdhnTfR_7XmRHyb9DQ",
+			"type": "string"
+		},
+		{
+			"key": "editor_token",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InlqNG9iYzZqeWphR3J5Um5wanhXZSJ9.eyJpc3MiOiJodHRwczovL2Rldi02Yzd1cHVrMy51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NjI4MmY5ZmI1YmJmYWMwMDY3MTcwZTI3IiwiYXVkIjoiY2Fwc3RvbmUiLCJpYXQiOjE2NTI4NDE0NDgsImV4cCI6MTY1MjkyNzg0OCwiYXpwIjoiUjBGZE4zbDFCMUVEa0VKNVo2Qmd2Z1pqR0lPaVhiQ00iLCJzY29wZSI6IiIsInBlcm1pc3Npb25zIjpbImNyZWF0ZTpjb21tZW50IiwiY3JlYXRlOnBvc3QiLCJkZWxldGU6Y29tbWVudCIsImRlbGV0ZTpwb3N0IiwidXBkYXRlOmNvbW1lbnQiLCJ1cGRhdGU6cG9zdCIsInZvdGU6Y29tbWVudCJdfQ.el7sVmJ6u97E__jOZvxyEc25bMjVInG8udhOvWJuXUpmIwNm30cXsK_nrZTlyvBB3-nT-0mZSQ3DBBvvDBRR6RXgS5jDvYab2HCXSo8YpMWALeHHc-qf-bez2gXgcvsmFbCUShaPf2z_rjnZE-IXfxt2DXJtlF6iGBV-TbIkwuoov9riah2Ry6HWxcI_oi7jNarbZ6ufgn85U-mgW0vZo0vL0LpSch3YO_s0-2OC_fBdZYOBCfTouHY4oJcdTqnAwgWD17QCxlzLYNclbfIkW-g5tcJTFLKMfm8DaCm6K06vl1FzHoQGo_J0awQni9muVQkxGx9AbTxJVvRGSlqpQw",
 			"type": "string"
 		}
 	]
