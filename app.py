@@ -63,7 +63,7 @@ def create_app(test_config=None):
         return jsonify({
             "success": False,
             "error": 401,
-            "message": "unauthorized"
+            "message": "This resource need authentication"
         }), 401
 
     @app.errorhandler(403)
@@ -71,7 +71,7 @@ def create_app(test_config=None):
         return jsonify({
             "success": False,
             "error": 403,
-            "message": "forbidden"
+            "message": "You don't have permissions to access this resources"
         }), 403
 
     return app

@@ -29,10 +29,8 @@ With Postgres running, create a `capstone` database:
 
 ```bash
 createdb capstone
+psql capstone < capstone.psql
 ```
-See this link to see [how to install & configure Postgresql]()
-
-> At this step DB is empty you can after migration populate it for the postman test.
 
 
 ### Run the Server
@@ -51,26 +49,34 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-- Migrate your application schema
+- Export environment variable
 
 ```bash
-sh db_upgrade
+source setup.sh
 ```
 
-- Populate database with some content. Use th psql file inside on the root of the project
+- Upgrade your application schema
 
 ```bash
-psql capstone < capstone.psql
+python migrate db upgrade
 ```
 
 - Run the server, execute:
 
 ```bash
-sh start
+python app.py
 ```
 
+or 
+
+```bash
+flask run
+```
 
 ### Generate a token
+
+> On Postman collect token is already configure \
+If you change it adapt the information on postman collection variable
 
 You can generate a token from this link : 
  - https://dev-6c7upuk3.us.auth0.com/authorize?audience=capstone&response_type=token&client_id=R0FdN3l1B1EDkEJ5Z6BgvgZjGIOiXbCM&redirect_uri=https://eo6nlbgy2ozay8f.m.pipedream.net
@@ -88,10 +94,16 @@ You can generate a token from this link :
       password : Passer@12
    ``` 
 
-> If you change token adapt the information on postman collection variable file for unittest
+
 
 ### Test API
 
+ - Follow step will help you have data for test on local 
+```
+dropdb capstone
+createdb capstone
+psql capstone < capstone.psql
+```
 
 You can test all endpoint by used the postman. For That, 
  - Import the collection Capstone.postman_collection.json
@@ -104,16 +116,17 @@ you need to adapt value if you want to run it again or just remove and recreate 
  - You can test one by one any endpoint by adapted  payload and/or get parameter
 
 >  To test the online application with postman just change on the collection variable the host value with this one : \
+https://capstone-blogpost.herokuapp.com 
 
 
 ## API Documentation
 
 ### Getting Started
-- __Host__  : 
+- __Host__  : https://capstone-blogpost.herokuapp.com
 - __Base URL__ : The base URL for the backend is  __/api/v1__. 
 - ___Authentication__ : This application use __Bearer__ with Auth0 token 
 
-> All necessary token is already provide on postman security to for Reader and editor
+> All necessary token is already provide on postman security tab for Reader and editor
 
 ### Error Handling
 Errors are returned as JSON objects in the following format:

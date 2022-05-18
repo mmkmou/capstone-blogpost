@@ -31,7 +31,7 @@ def posts():
     current_posts = paginate(request, posts)
 
     if len(current_posts) == 0:
-            abort(404)
+            current_posts = []
 
     return jsonify(
         {
@@ -66,15 +66,16 @@ def post_comments(post_id):
         
         
         if len(comments) == 0:
-            abort(404)
+            post_comments = []
+        else: 
+            post_comments = [comment.format() for comment in comments]
         
 
-        return jsonify(
-            {
+        return jsonify({
                 "success": True,
-                "comments": [comment.format() for comment in comments]
-            }
-        )
+                "comments": post_comments
+            })
+            
     except Exception as e:
         if isinstance(e, HTTPException):
             abort(e.code)
