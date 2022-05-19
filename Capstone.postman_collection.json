@@ -15,9 +15,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -54,14 +52,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -95,14 +86,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -131,9 +115,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -171,9 +153,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -210,14 +190,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -247,9 +220,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -287,9 +258,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -328,9 +297,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -368,9 +335,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 401 since no credentials are present\", function () {",
-									"    pm.response.to.have.status(401);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -413,9 +378,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
-									"    pm.response.to.have.status(403);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -452,14 +415,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -493,14 +449,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -529,9 +478,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
-									"    pm.response.to.have.status(403);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -542,7 +489,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"body\": \"ceci est un test automatic\"\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -569,14 +516,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -613,14 +553,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -650,9 +583,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
-									"    pm.response.to.have.status(403);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -690,14 +621,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains score as string\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.score).to.be.an('number')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -736,9 +660,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
-									"    pm.response.to.have.status(403);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -776,9 +698,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 403 since credentials are valid, but permission is not present\", function () {",
-									"    pm.response.to.have.status(403);",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -851,14 +771,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -869,7 +782,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"Lorem ipsum dolor sit amet 3\",\n    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
+							"raw": "{\n    \"title\": \"Lorem ipsum dolor sit amet 8\",\n    \"body\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue vel massa commodo blandit sed non mauris. Phasellus condimentum urna eget porttitor vestibulum. Integer vitae cursus arcu. Aliquam metus eros, consequat quis laoreet in, pharetra vel massa. Praesent finibus augue lacus, sit amet accumsan magna mollis eu. Quisque metus tortor, feugiat eget maximus quis, faucibus ut nibh. In vel elit quis tellus aliquam rutrum a vel leo. Pellentesque a justo at est convallis volutpat vitae eu arcu. Nulla a tellus nulla.\",\n    \"image_url\": \"https://ihdemu.com/images/blog/que-es-lorem-ipsum.jpg\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -895,14 +808,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -936,14 +842,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.posts).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -972,14 +871,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts updated id\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.updated).to.be.an('number')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -990,7 +882,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"title\": \"updated posts\"\n}",
+							"raw": "{\n    \"title\": \"updated posts 6\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -998,13 +890,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/posts/1",
+							"raw": "{{host}}{{base_url}}/posts/6",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"posts",
-								"1"
+								"6"
 							]
 						}
 					},
@@ -1017,14 +909,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1035,7 +920,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"message\": \"test Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit\",\n    \"post_id\": 1,\n    \"title\": \"test\"\n}",
+							"raw": "{\n    \"message\": \"Comment 8 test Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit\",\n    \"post_id\": 4,\n    \"title\": \"test 8\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1061,14 +946,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments array\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('array')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1098,14 +976,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments object\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.comments).to.be.an('object')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1143,14 +1014,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains score as string\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.score).to.be.an('number')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1169,13 +1033,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}{{base_url}}/comments/1/vote",
+							"raw": "{{host}}{{base_url}}/comments/8/vote",
 							"host": [
 								"{{host}}{{base_url}}"
 							],
 							"path": [
 								"comments",
-								"1",
+								"8",
 								"vote"
 							]
 						}
@@ -1189,14 +1053,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains comments deleted id\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.deleted).to.be.an('number')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
@@ -1225,14 +1082,7 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"value contains posts deleted id\", function () {",
-									"    var jsonData = pm.response.json();",
-									"    pm.expect(jsonData.deleted).to.be.an('number')",
-									"});"
+									""
 								],
 								"type": "text/javascript"
 							}
