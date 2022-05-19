@@ -131,7 +131,7 @@ You can generate a token from this link :
 ### Test API
 
  - Follow step will help you have data for test on local 
-```
+```bash
 dropdb capstone
 createdb capstone
 psql capstone < capstone.psql
@@ -154,6 +154,15 @@ https://capstone-blogpost.herokuapp.com
 
 
 #### Unit test 
+
+- Setup environment variable
+```bash
+source setup.py
+```
+- Run test
+```
+python test_app.py
+```
 
 ## Deployment 
 
